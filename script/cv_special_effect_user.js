@@ -24,7 +24,7 @@
                 cv: null,
                 ctx: null,
                 interval: null,
-				animationFrame:true,//高频事件触发节流函数状态标志
+		animationFrame:true,//高频事件触发节流函数状态标志
                 array: [],
                 line: true, //是否允许连线的状态标志
                 move: null, //鼠标焦点粒子
@@ -364,37 +364,36 @@
                 //e.preventDefault();
             }, false);
             window.addEventListener('mousemove', function (e) {
-				/*
-				 *	该鼠标移动事件监听器回调函数作用域将被高频调用
-				 *	需要做函数节流优化性能，使每次回调函数都要在上一次
-				 *	执行完之后再执行，这样每一帧画面只会画一次
-				 *	一帧画面多次重复画的画面除了浪费资源就没有任何意义了
-				 */
-				if(Data.b.animationFrame){
-					Data.b.animationFrame=false;
-					window.requestAnimationFrame(()=>{
-						Data.b.animationFrame=true;
-						if (Data.b.interval) {
-							if (!Data.b.move) {
-								/* console.info(Data.b.move); */
-								/* 此时创建移动焦点小球 */
-								Data.b.move = new ParticlesB({
-									x: e.clientX,
-									y: e.clientY,
-									c: 'rgba(0,255,0,0.8)',
-									radius: 12
-								});
-								Data.b.array.push(Data.b.move);
-							} else {
-								/* 改变焦点粒子的xy坐标以及速度 */
-								Data.b.move.x = e.clientX;
-								Data.b.move.y = e.clientY;
-								_change_v_(Data.b.move);
-						
-							}
-						}
-					});
-				}
+		    /*
+		     *	该鼠标移动事件监听器回调函数作用域将被高频调用
+		     *	需要做函数节流优化性能，使每次回调函数都要在上一次
+		     *	执行完之后再执行，这样每一帧画面只会画一次
+		     *	一帧画面多次重复画的画面除了浪费资源就没有任何意义了
+		     */
+		    if(Data.b.animationFrame){
+			    Data.b.animationFrame=false;
+			    window.requestAnimationFrame(()=>{
+				    Data.b.animationFrame=true;
+				    if (Data.b.interval) {
+					    if (!Data.b.move) {
+						    /* console.info(Data.b.move); */
+						    /* 此时创建移动焦点小球 */
+						    Data.b.move = new ParticlesB({
+							    x: e.clientX,
+							    y: e.clientY,
+							    c: 'rgba(0,255,0,0.8)',
+							    radius: 12
+						    });
+						    Data.b.array.push(Data.b.move);
+					    } else {
+						    /* 改变焦点粒子的xy坐标以及速度 */
+						    Data.b.move.x = e.clientX;
+						    Data.b.move.y = e.clientY;
+						    _change_v_(Data.b.move);
+					    }
+				    }
+			    });
+		    }
             }, false);
             /* onclick contouchend事件，移动端先触发后者，再触发前者 */
             /* 因为主要是编写桌面端的脚本，移动端就随便写一点事件监听器了 */
