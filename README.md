@@ -15,3 +15,7 @@ Chrome浏览器写的JavaScript用户脚本，实现鼠标点击移动的绚丽�
 - 移动端：点击屏幕顶部（横向居中1/3，纵向1/20高处）进入特效，点击屏幕底部（横向居中1/3，纵向1/20高）突出
 建议使用alook或 via浏览器。
 - 喜欢的请点个赞，这是 0.1 版本，后续会不断更新，添加更美丽的效果，优化性能
+
+
+**新版本正在编码中。。。。。。**
+![image](https://github.com/isCagedBird/script_for_chrome/blob/master/img/.png)
