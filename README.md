@@ -18,4 +18,5 @@ Chrome浏览器写的JavaScript用户脚本，实现鼠标点击移动的绚丽�
 
 
 **新版本正在编码中。。。。。。**
-![image](https://github.com/isCagedBird/script_for_chrome/blob/master/img/.png)
+
+![image](https://github.com/isCagedBird/script_for_chrome/blob/master/new.png)
